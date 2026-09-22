@@ -1,17 +1,21 @@
 # Adaptive Reasoning 0.1.0
 
-**Let Codex think deeper when the work gets harder.**
+**Automatically adjust Codex reasoning levels such as medium, high, and xhigh during development, then continue the current task.**
 
-Is medium enough for this problem? Should you switch to high? And after switching, do you need to explain where to pick up again?
+Adaptive Reasoning is a Codex Skill. It preserves your chosen model and effort during ordinary work and assesses whether complex problems warrant deeper reasoning. Before switching, it saves progress; afterward, it verifies the actual effort and resumes the original problem, reducing manual setting changes and repeated handoffs.
 
-Adaptive Reasoning is a lightweight Skill that helps **Codex adapt reasoning effort to development difficulty**. Once invoked, it assesses whether complex problems or evidence-backed repair attempts without progress warrant escalation, saves a handoff, and verifies the actual setting in a new turn of the same task before continuing. You spend less time managing effort levels and repeating context.
+## When it is useful
 
-| Development situation | How it responds |
+| Scenario | What the skill does |
 |---|---|
-| Routine development and ordinary edits | Keeps your chosen model and initial effort |
-| A problem calls for deeper reasoning | Assesses escalation and continues in the same task |
-| A fix is verified and substantial ordinary work remains | Restores the baseline when cooldown conditions permit |
-| You want another model available when needed | Switches only along a route you explicitly authorize |
+| Debugging a complex bug after two distinct, evidence-backed fixes fail | Reassesses whether reasoning is the bottleneck; escalates to the next supported level when justified and continues debugging |
+| Refactoring across files or analyzing complex state logic with multiple constraints | Assesses whether to escalate before deeper work, based on actual complexity rather than task labels |
+| Continuing development after resolving a difficult problem | Restores the baseline after a verified fix when substantial ordinary work remains and cooldown conditions permit |
+| Setting limits on automatic adjustment | Respects instructions such as “keep this model” or “at most high”; changing models requires separate authorization |
+
+For example, you start at **medium**. If a complex bug meets escalation criteria, the skill can switch to **high** and continue debugging. Once the fix is verified, it can restore **medium** for substantial remaining routine work under its cooldown rules. The default automatic ceiling is **xhigh**, subject to supported levels and your authorization.
+
+Small edits keep the original effort. Missing dependencies, network failures, and permission errors are addressed directly; an error alone does not trigger escalation.
 
 **Give Codex the repository link and ask it to check and install the skill.** No server deployment is needed, and your current model is preserved by default.
 
