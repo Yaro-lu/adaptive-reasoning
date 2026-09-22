@@ -1,5 +1,22 @@
 # Adaptive Reasoning 0.1.0
 
+**Let Codex think deeper when the work gets harder.**
+
+Is medium enough for this problem? Should you switch to high? And after switching, do you need to explain where to pick up again?
+
+Adaptive Reasoning is a lightweight Skill that helps **Codex adapt reasoning effort to development difficulty**. Once invoked, it assesses whether complex problems or evidence-backed repair attempts without progress warrant escalation, saves a handoff, and verifies the actual setting in a new turn of the same task before continuing. You spend less time managing effort levels and repeating context.
+
+| Development situation | How it responds |
+|---|---|
+| Routine development and ordinary edits | Keeps your chosen model and initial effort |
+| A problem calls for deeper reasoning | Assesses escalation and continues in the same task |
+| A fix is verified and substantial ordinary work remains | Restores the baseline when cooldown conditions permit |
+| You want another model available when needed | Switches only along a route you explicitly authorize |
+
+**Give Codex the repository link and ask it to check and install the skill.** No server deployment is needed, and your current model is preserved by default.
+
+> Early release: the switching and continuation flow has passed local Windows tests. Automatic adjustment requires compatible Codex host interfaces. Installation does not guarantee invocation in every task or lower costs. See runtime boundaries below.
+
 [中文对照 / Chinese](README.md)
 
 ## Easiest way to connect Codex
