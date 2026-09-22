@@ -1,4 +1,4 @@
-# 自动推理强度 · Adaptive Reasoning 0.1.0
+# Codex自动推理强度 · Adaptive Reasoning 0.1.0
 
 中文说明见下文；英文对照见 [English documentation](README.en.md)。
 For English equivalents of the sections below, see [English documentation](README.en.md).
