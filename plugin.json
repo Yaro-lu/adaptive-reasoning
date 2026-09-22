@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "adaptive-reasoning",
+  "version": "0.1.0+codex.20260922073507",
+  "description": "Adaptive reasoning effort for Codex development, with capability discovery, authorized model routes and verified continuation.",
+  "keywords": [
+    "codex",
+    "reasoning",
+    "development",
+    "workflow"
+  ]
+}

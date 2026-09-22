@@ -1,0 +1,7 @@
+interface:
+  display_name: "自动推理强度"
+  short_description: "根据任务难度自动调整推理强度，保留用户选择并核验同任务接续结果"
+  default_prompt: "使用 $adaptive-reasoning 继续当前开发，按难度自动升档，跨模型切换遵循我的授权。"
+
+policy:
+  allow_implicit_invocation: true
