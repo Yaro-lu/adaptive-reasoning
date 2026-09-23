@@ -1,22 +1,22 @@
 {
   "name": "adaptive-reasoning",
-  "version": "0.1.0+codex.20260922073507",
-  "description": "Adjust reasoning effort to task difficulty with dynamic model discovery and verified same-task continuation.",
+  "version": "0.2.0",
+  "description": "Adaptive reasoning on your chosen Codex model, excluding low tiers, with an advised Astra/Sol choice before ultra.",
   "author": {
     "name": "Unpublished local build"
   },
   "skills": "./skills/",
   "interface": {
-    "displayName": "\u81ea\u52a8\u63a8\u7406\u5f3a\u5ea6 \u00b7 Adaptive Reasoning",
-    "shortDescription": "\u6309\u4efb\u52a1\u96be\u5ea6\u81ea\u52a8\u5347\u6863\uff0c\u6838\u9a8c\u540e\u7ee7\u7eed\u540c\u4e00\u4efb\u52a1\u3002",
-    "longDescription": "\u7eaf Skill \u63d2\u4ef6\u3002\u4fdd\u7559\u5f53\u524d\u6a21\u578b\u4e0e\u521d\u59cb\u5f3a\u5ea6\uff0c\u52a8\u6001\u67e5\u8be2\u652f\u6301\u6863\u4f4d\uff0c\u7ba1\u7406\u51b7\u5374\u548c\u63a5\u7eed\u72b6\u6001\uff1b\u8de8\u6a21\u578b\u4ec5\u4f7f\u7528\u7528\u6237\u6388\u6743\u7684\u8def\u7ebf\u3002\u9700\u8981\u652f\u6301\u4efb\u52a1\u6392\u961f\u548c\u8fd0\u884c\u8bb0\u5f55\u6838\u9a8c\u7684 Codex \u73af\u5883\u3002",
+    "displayName": "自动推理强度 · Adaptive Reasoning",
+    "shortDescription": "基于所选模型升档，跳过 low；ultra 先建议并询问。",
+    "longDescription": "纯 Skill 插件：按用户所选模型自动使用 medium/high/xhigh，跳过所有型号的低档。ultra 专项先推荐可用 Astra/Sol 并等待用户选择，再核验同任务接续。Skills-only: adapt effort on the chosen model, exclude low, and wait for a per-stage Astra/Sol choice before ultra.",
     "category": "Productivity",
     "developerName": "Unpublished local build",
     "capabilities": [],
     "defaultPrompt": [
-      "\u4f7f\u7528 $adaptive-reasoning \u7ee7\u7eed\u5f00\u53d1\uff0c\u6309\u96be\u5ea6\u8c03\u6574\u5f53\u524d\u6a21\u578b\u5f3a\u5ea6\u3002",
-      "\u672c\u4efb\u52a1\u53ea\u7528\u5f53\u524d\u6a21\u578b\uff0c\u63a8\u7406\u5f3a\u5ea6\u6700\u591a\u5347\u5230 high\u3002",
-      "\u68c0\u67e5\u5f53\u524d\u6a21\u578b\u3001\u5b9e\u9645\u5f3a\u5ea6\u548c\u53ef\u7528\u5347\u6863\u9009\u9879\uff0c\u4e0d\u6267\u884c\u5207\u6362\u3002"
+      "使用 $adaptive-reasoning 继续开发，基于当前模型升档，跳过 low。",
+      "需要 ultra 时，先给我 Astra 或 Sol 的建议，等待我选择后再执行。",
+      "只读检查当前模型、实际强度与可用档位，不执行切换。"
     ]
   }
 }

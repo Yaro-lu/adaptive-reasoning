@@ -27,7 +27,7 @@ If none are available, preserve configuration and disclose discovery unavailable
 Where `codex app-server proxy --help` confirms support, connect a bounded read-only client using that command. Each JSON object is a separate line; wait for successful initialization before sending initialized and further requests:
 
 ```json
-{"id":1,"method":"initialize","params":{"clientInfo":{"name":"adaptive_reasoning_discovery","version":"0.1.0"},"capabilities":{"experimentalApi":true}}}
+{"id":1,"method":"initialize","params":{"clientInfo":{"name":"adaptive_reasoning_discovery","version":"0.2.0"},"capabilities":{"experimentalApi":true}}}
 {"method":"initialized","params":{}}
 {"id":2,"method":"model/list","params":{"limit":100,"includeHidden":false}}
 ```
@@ -47,6 +47,8 @@ Normalize returned fields:
 Refresh on invalid-model/effort errors, but reconcile ambiguous delivery before retrying. Hidden/unavailable models are not new targets. A current user-selected hidden model may be inspected specifically. Unknown future effort semantics need current documentation, not alphabetical ordering.
 
 ## Prepare next-turn settings, then queue
+
+Before any setter or queue call, enforce version 0.2.0 target policy: never select none/minimal/low, and require the user's current-stage exact Astra/Sol choice for ultra. This applies to normalization, escalation, restoration and old saved routes. A pending user choice is not permission to prepare settings early. See [ultra.md](ultra.md).
 
 Inspect `codex --version` and `codex queue --help` on the current host. Windows CLI 0.155.0-alpha.9.2 observed during development accepts --thread, --message, -m and -c. Other versions/platforms require checks. Do not assume a universal `codex models` command.
 
@@ -91,11 +93,11 @@ Verify each actual transition, including CLI configuration precedence. A setting
 
 Windows CLI 0.155.0-alpha.9.2 evidence, 2026-09-22:
 
-- Historical desktop preparation followed by queue produced a new gpt-6-astra / low turn.
+- Historical 0.1.0 desktop preparation followed by queue produced a new gpt-6-astra / low turn. This is transport evidence only; 0.2.0 excludes low targets.
 - Queue-only medium→high failed: new turn, same medium effort. This established the need for settings preparation.
 - A subsequent user-authorized three-stage test used desktop settings preparation followed by queue: Astra medium→high, Astra high→Sol medium, and Sol medium→Astra medium all matched fresh turn_context model/effort records. Task identity and cwd were retained; the original configuration was restored.
 - Temporary read-only stdio discovery returned five models and their effort options, with zero model-inference requests. skills/list found the installed skill enabled.
 
-These are bounded transport/integration tests, not a guarantee of difficulty classification or implicit invocation on every task. xhigh, other operating systems and long-running/concurrent failure scenarios have not been exercised. Verify every future transition rather than treating this evidence as a substitute.
+These are historical 0.1.0 bounded transport/integration tests, not live validation of 0.2.0's floor normalization or ultra choice gate, and not a guarantee of difficulty classification or implicit invocation. xhigh, ultra, other operating systems and long-running/concurrent failure scenarios have not been exercised. Verify every future transition rather than treating this evidence as a substitute.
 
 Official reference: https://learn.chatgpt.com/docs/app-server . Use current host help and official documentation if protocol shapes change.

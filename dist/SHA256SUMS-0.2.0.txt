@@ -1,0 +1,2 @@
+980783212978a897adfe838c10e2cefadb3afbe6c3ffef9d58a00c80139eeab4  adaptive-reasoning-0.2.0.zip
+fc1dbe87e5e18e16eb7909284e38bd01144a6782055d0b7f1a18234003610153  adaptive-reasoning-skill-0.2.0.zip
