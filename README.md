@@ -4,6 +4,8 @@
 
 Adaptive Reasoning 是一个用于 Codex 的 Skill。以你选择的模型为基础，在 medium、high、xhigh 之间按任务难度升档；需要 ultra 时，先给出建议，让你选择 Astra 还是 Sol，再继续。切换前保存工作进度，切换后核验实际档位，减少手动切档和重新交代进度的操作。
 
+同时，在调用该插件的时候，你也可以手动指定跳过某某模型。例如从sol xhigh直接升到astra high，而不是用astra middle
+
 ## 0.2.0 更新说明 · 2026-09-23
 
 - **保持用户选择的模型**：不默认指定 Sol 或 Astra，普通升档在所选模型内完成。
